@@ -1,0 +1,13 @@
+[Unit]
+Description=Student Flask Application
+After=network.target mysqld.service
+
+[Service]
+User=appuser
+Group=appuser
+WorkingDirectory=/opt/myapp
+ExecStart=/opt/myapp/venv/bin/python /opt/myapp/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
